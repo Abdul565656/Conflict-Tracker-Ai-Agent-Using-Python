@@ -7,11 +7,9 @@ from agents import Agent, Runner, AsyncOpenAI, OpenAIChatCompletionsModel
 from agents.run import RunConfig
 from datetime import datetime
 
-# Load environment variables
-load_dotenv()
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-NEWS_API_KEY = os.getenv("NEWS_API_KEY")
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+NEWS_API_KEY = st.secrets["NEWS_API_KEY"]
 
 if not GEMINI_API_KEY:
     st.error("GEMINI_API_KEY is not set in .env file.")
